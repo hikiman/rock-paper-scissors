@@ -11,3 +11,21 @@ function getComputerChoice() {
     return 'scissors'
   }
 }
+
+function getHumanChoice() {
+  let humanChoice = prompt('What will you pick?', 'rock');
+
+  if (humanChoice === 'rock') {
+    return 'rock';
+  }
+  else if (humanChoice === 'paper') {
+    return 'paper';
+  }
+  else if (humanChoice === 'scissors') {
+    return 'scissors';
+  }
+  else {
+    alert('Enter rock, paper or scissors!');
+    return 'error';
+  }
+}
