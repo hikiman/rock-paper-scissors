@@ -88,15 +88,6 @@ function playGame() {
         isError = true;
       }
     }
-
-  while (loopCounter <= 5) {
-    let humanSelection = getHumanChoice(),
-      computerSelection = getComputerChoice();
-
-    playRound(humanSelection, computerSelection);
-    isError || isTie || loopCounter++;
-    console.log(`You: ${humanScore}, Computer: ${computerScore}`)
-  }
   
   if (humanScore > computerScore) {
     console.log("You won the match!");
