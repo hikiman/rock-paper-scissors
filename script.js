@@ -1,3 +1,14 @@
+const body = document.querySelector("body");
+const buttonSelectRock = document.createElement("button");
+const buttonSelectPaper = document.createElement("button");
+const buttonSelectScissors = document.createElement("button");
+
+buttonSelectRock.textContent = "Choose Rock";
+buttonSelectPaper.textContent = "Choose Paper";
+buttonSelectScissors.textContent = "Choose Scissors";
+
+body.append(buttonSelectRock, buttonSelectPaper, buttonSelectScissors);
+
 function getComputerChoice() {
   let computerChoice = Math.floor(Math.random() * 3 + 1);
 
