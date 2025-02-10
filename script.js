@@ -12,24 +12,6 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  let humanChoice = prompt('What will you pick?', 'rock');
-
-  if (humanChoice === 'rock') {
-    return 'rock';
-  }
-  else if (humanChoice === 'paper') {
-    return 'paper';
-  }
-  else if (humanChoice === 'scissors') {
-    return 'scissors';
-  }
-  else {
-    alert('Enter rock, paper or scissors!');
-    return 'error';
-  }
-}
-
 function playGame() {
   const body = document.querySelector("body");
   const buttonSelectRock = document.createElement("button");
@@ -41,7 +23,7 @@ function playGame() {
   buttonSelectScissors.textContent = "Choose Scissors";
   
   body.append(buttonSelectRock, buttonSelectPaper, buttonSelectScissors);
-  
+
   let humanScore = 0,
     computerScore = 0,
     loopCounter = 1,
