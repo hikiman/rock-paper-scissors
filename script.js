@@ -26,13 +26,10 @@ function playGame() {
 
   let humanScore = 0,
     computerScore = 0,
-    loopCounter = 1,
-    isTie = false,
-    isError = false;
+    isTie = false;
 
     function playRound(humanChoice, computerChoice) {
       isTie = false,
-      isError = false;
       humanChoice = humanChoice.toLowerCase();
     
       if (humanChoice === computerChoice) {
@@ -81,12 +78,13 @@ function playGame() {
         isError = true;
       }
     }
-  
-  if (humanScore > computerScore) {
-    console.log("You won the match!");
-  }
-  else {
-    console.log("You lost the match!");
+  while (humanScore < 5 || computerScore < 5) {
+    if (humanScore > computerScore) {
+      console.log("You won the match!");
+    }
+    else {
+      console.log("You lost the match!");
+    }
   }
 }
 
