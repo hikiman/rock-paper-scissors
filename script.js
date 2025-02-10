@@ -88,14 +88,6 @@ function playGame() {
         isError = true;
       }
     }
-  while (humanScore < 5 || computerScore < 5) {
-    if (humanScore > computerScore) {
-      console.log("You won the match!");
-    }
-    else {
-      console.log("You lost the match!");
-    }
-  }
 }
 
 playGame();
