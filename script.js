@@ -28,6 +28,16 @@ function playGame() {
     computerScore = 0,
     isTie = false;
 
+    buttonSelectRock.addEventListener("click", () => {
+      playRound('rock', getComputerChoice());
+    });
+    buttonSelectPaper.addEventListener("click", () => {
+      playRound('paper', getComputerChoice());
+    });
+    buttonSelectScissors.addEventListener("click", () => {
+      playRound('scissors', getComputerChoice());
+    });
+
     function playRound(humanChoice, computerChoice) {
       isTie = false,
       humanChoice = humanChoice.toLowerCase();
