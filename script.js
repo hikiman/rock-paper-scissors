@@ -87,6 +87,13 @@ function playGame() {
         console.log('You passed the wrong argument! You can only use rock, paper and scissors!');
         isError = true;
       }
+
+      if (humanScore > 4 || computerScore > 4) {
+        const winner = (humanScore > computerScore) ? "You" : "Computer";
+        console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore}. Winner of the match: ${winner}`);
+        humanScore = 0;
+        computerScore = 0;
+      }
     }
 }
 
