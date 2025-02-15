@@ -17,12 +17,13 @@ function playGame() {
   const buttonSelectRock = document.createElement("button");
   const buttonSelectPaper = document.createElement("button");
   const buttonSelectScissors = document.createElement("button");
+  const resultBox = document.createElement("div");
 
   buttonSelectRock.textContent = "Choose Rock";
   buttonSelectPaper.textContent = "Choose Paper";
   buttonSelectScissors.textContent = "Choose Scissors";
 
-  body.append(buttonSelectRock, buttonSelectPaper, buttonSelectScissors);
+  body.append(buttonSelectRock, buttonSelectPaper, buttonSelectScissors, resultBox);
 
   let humanScore = 0,
     computerScore = 0,
@@ -43,54 +44,54 @@ function playGame() {
       humanChoice = humanChoice.toLowerCase();
 
     if (humanChoice === computerChoice) {
-      console.log('It\'s Tie! Play again!');
+      resultBox.textContent = `It\'s Tie! Play again! Human Score: ${humanScore}, Computer Score: ${computerScore}.`;
       isTie = true;
     }
 
     else if (humanChoice === 'rock') {
       if (computerChoice === 'paper') {
-        console.log('You lost! Paper beats Rock.');
+        resultBox.textContent = `You lost! Paper beats Rock. Human Score: ${humanScore}, Computer Score: ${computerScore}.`;
         computerScore++;
       }
 
       else {
-        console.log('You won! Rock beats Scissors.');
+        resultBox.textContent = `You won! Rock beats Scissors. Human Score: ${humanScore}, Computer Score: ${computerScore}.`;
         humanScore++;
       }
     }
 
     else if (humanChoice === 'paper') {
       if (computerChoice === 'rock') {
-        console.log('You won! Paper beats Rock.');
+        cresultBox.textContent = `You won! Paper beats Rock. Human Score: ${humanScore}, Computer Score: ${computerScore}.`;
         humanScore++;
       }
 
       else {
-        console.log('You lost! Scissors beats Paper.');
+        resultBox.textContent = `You lost! Scissors beats Paper. Human Score: ${humanScore}, Computer Score: ${computerScore}.`;
         computerScore++;
       }
     }
 
     else if (humanChoice === 'scissors') {
       if (computerChoice === 'rock') {
-        console.log('You lost! Rock beats Scissors.');
+        resultBox.textContent = `You lost! Rock beats Scissors. Human Score: ${humanScore}, Computer Score: ${computerScore}.`;
         computerScore++;
       }
 
       else {
-        console.log('You won! Scissors beats Paper.');
+        resultBox.textContent = `You won! Scissors beats Paper. Human Score: ${humanScore}, Computer Score: ${computerScore}.`;
         humanScore++;
       }
     }
 
     else {
-      console.log('You passed the wrong argument! You can only use rock, paper and scissors!');
+      resultBox.textContent = 'You passed the wrong argument! You can only use rock, paper and scissors!';
       isError = true;
     }
 
     if (humanScore > 4 || computerScore > 4) {
       const winner = (humanScore > computerScore) ? "You" : "Computer";
-      console.log(`Human Score: ${humanScore}, Computer Score: ${computerScore}. Winner of the match: ${winner}`);
+      resultBox.textContent = `Human Score: ${humanScore}, Computer Score: ${computerScore}. Winner of the match: ${winner}`;
       humanScore = 0;
       computerScore = 0;
     }
